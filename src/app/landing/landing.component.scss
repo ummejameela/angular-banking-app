@@ -1,0 +1,38 @@
+/* Center the Hero Section */
+section {
+  background: linear-gradient(to bottom right, #e9f5ff, #ffffff);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Image Styling */
+section img {
+  margin-top: 20px;
+  height: 100px;
+}
+
+/* Hero Heading */
+section h1 {
+  font-weight: 700;
+  color: #105688;
+}
+
+/* Hero Paragraph */
+section p {
+  color: #6e7071;
+  font-size: 1.2rem;
+}
+
+/* Header button styling */
+header .btn {
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #105688;
+  border: none;
+}
+
+header .btn:hover {
+  background-color: #0c456d;
+}

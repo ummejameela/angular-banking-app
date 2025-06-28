@@ -1,0 +1,59 @@
+<h2>Customer + Account Form</h2>
+
+<form [formGroup]="customerAccountForm" (ngSubmit)="onSubmit()">
+
+  <!-- ✅ Customer Details -->
+  <h4>Customer Details</h4>
+
+  <label>Name:</label>
+  <input formControlName="customerName" /><br />
+  <div *ngIf="customerAccountForm.get('customerName')?.touched && customerAccountForm.get('customerName')?.invalid" style="color:red;">
+    <small *ngIf="customerAccountForm.get('customerName')?.errors?.['required']">Name is required</small>
+    <small *ngIf="customerAccountForm.get('customerName')?.errors?.['minlength']">Minimum 5 characters required</small>
+  </div>
+
+  <label>Mobile:</label>
+  <input formControlName="customerMobile" /><br />
+  <div *ngIf="customerAccountForm.get('customerMobile')?.touched && customerAccountForm.get('customerMobile')?.invalid" style="color:red;">
+    <small *ngIf="customerAccountForm.get('customerMobile')?.errors?.['required']">Mobile is required</small>
+    <small *ngIf="customerAccountForm.get('customerMobile')?.errors?.['pattern']">Enter a valid 10-digit mobile number</small>
+  </div>
+
+  <label>Address:</label>
+  <input formControlName="customerAddress" /><br />
+  <div *ngIf="customerAccountForm.get('customerAddress')?.touched && customerAccountForm.get('customerAddress')?.invalid" style="color:red;">
+    <small *ngIf="customerAccountForm.get('customerAddress')?.errors?.['required']">Address is required</small>
+  </div>
+
+  <!-- ✅ Account Details -->
+  <h4>Account Details</h4>
+
+  <label>Account Number:</label>
+  <input formControlName="accountNumber" /><br />
+  <div *ngIf="customerAccountForm.get('accountNumber')?.touched && customerAccountForm.get('accountNumber')?.invalid" style="color:red;">
+    <small *ngIf="customerAccountForm.get('accountNumber')?.errors?.['required']">Account Number is required</small>
+    <small *ngIf="customerAccountForm.get('accountNumber')?.errors?.['pattern']">Must start with 'BANK' and followed by 8 digits</small>
+  </div>
+
+  <label>Account Type:</label>
+  <select formControlName="accountType">
+    <option value="">Select</option>
+    <option value="Savings">Savings</option>
+    <option value="Current">Current</option>
+  </select><br />
+  <div *ngIf="customerAccountForm.get('accountType')?.touched && customerAccountForm.get('accountType')?.invalid" style="color:red;">
+    <small *ngIf="customerAccountForm.get('accountType')?.errors?.['required']">Please select account type</small>
+  </div>
+
+  <label>Branch IFSC:</label>
+  <input formControlName="branchIfsc" readonly /><br />
+
+  <label>Branch Address:</label>
+  <input formControlName="branchAddress" readonly /><br />
+
+  <button type="submit" [disabled]="customerAccountForm.invalid">
+    {{isEditMode ? 'Update': 'Submit'}}
+    </button>
+</form>
+
+<p *ngIf="formSubmitted" style="color: green;">Submitted Successfully!</p>

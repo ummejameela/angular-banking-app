@@ -1,0 +1,31 @@
+<!-- landing.component.html -->
+<div class="container-fluid p-0">
+  <!-- Header -->
+ <header class="bg-light border-bottom">
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    <!-- Left Side: Navigation Links -->
+    <nav class="d-flex gap-3">
+      <a routerLink="/about" class="text-decoration-none text-dark">About</a>
+      <a routerLink="/services" class="text-decoration-none text-dark">Services</a>
+      <a routerLink="/contact" class="text-decoration-none text-dark">Contact</a>
+    </nav>
+
+    <!-- Right Side: Button -->
+    <button class="btn btn-primary" routerLink='/login'>LogIn</button>
+     <!-- <button class="btn btn-primary" [routerLink]="['/login']">Register</button> -->
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="bg-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Welcome to Banking Services</h1>
+      <p class="lead mt-3">
+        A professional solution for managing accounts and data.
+      </p>
+            <img src="assets/land.png" alt="Logo" style="height: 50px;">
+
+    </div>
+    </section>
+</div>

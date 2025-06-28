@@ -1,0 +1,29 @@
+.nav {
+  margin-top: 20px;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column; /* For vertical layout */
+  gap: 10px;
+  padding: 0;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav .btn {
+  width: 100%;            /* Full width button */
+  text-align: left;       /* Align text to the left */
+  padding: 10px 15px;
+  background:none; /* Your theme color */
+  color: 105688;
+  border: none;
+  color: #105688;
+  font-weight: bold;
+}
+
+.nav .btn:hover {
+  background-color: #105688;
+color: white;}

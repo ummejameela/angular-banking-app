@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row vh-100">
+    <!-- Sidebar -->
+    <div class="col-2 border-end">
+      <app-navigationpanel></app-navigationpanel>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-10 p-4">
+      <!-- Tab Buttons -->
+      <div class="tab-buttons mb-4">
+        <!-- <button class="tab-btn" routerLink="customerAccountForm" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+          Account Details
+        </button> -->
+       
+        <H3>Account Details</H3>
+        <button routerLink="customerAccountForm">+ Account</button>
+  
+
+      </div>
+
+      <!-- Content Displayed by Router -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 mt-4">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Use relative paths (e.g., 'customer') in routerLink when navigating to child routes from a parent component. This keeps the navigation within the current route context.
+
+Use absolute paths (e.g., '/home/customer') when you need to navigate to a specific route from anywhere in the application, ensuring a full path match.
+
+ -->

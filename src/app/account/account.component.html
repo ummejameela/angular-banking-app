@@ -1,0 +1,45 @@
+<h3>Submitted Entries</h3>
+<button class="tab-btn" routerLink="/home/accountDetails" routerLinkActive="active-tab">
+  Account Details
+
+</button>
+<!-- //pagination  -->
+<div class="" style="display: flex;justify-content: flex-end;">
+  <button style="margin: 2px;" (click)="goToPage(1)" [disabled]="currentPage === 1">First</button>
+  <button style="margin: 2px;" (click)="goToPage(currentPage-1)" [disabled]="currentPage === 1">Pre</button>
+  <button style="margin: 2px;" (click)="goToPage(currentPage+1)" [disabled]="currentPage===totalPages">Next</button>
+  <button style="margin: 2px;" (click)="goToPage(totalPages)" [disabled]="currentPage===totalPages">Last</button>
+
+</div>
+
+
+<table *ngIf="paginatedRecords.length > 0" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Address</th>
+      <th>Account No</th>
+      <th>Type</th>
+      <th>IFSC</th>
+      <th>Branch</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of paginatedRecords; let i = index">
+      <td>{{ r.customerName }}</td>
+      <td>{{ r.customerMobile }}</td>
+      <td>{{ r.customerAddress }}</td>
+      <td>{{ r.accountNumber }}</td>
+      <td>{{ r.accountType }}</td>
+      <td>{{ r.branchIfsc }}</td>
+      <td>{{ r.branchAddress }}</td>
+      <td><button (click)="editRecord(i)">Edit</button></td>
+      <td><button (click)="deleteRecord(i)">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="records.length === 0">No entries yet.</p>
