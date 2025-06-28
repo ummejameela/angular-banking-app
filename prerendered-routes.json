@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/angular-banking-app": {},
+    "/angular-banking-app/home": {},
+    "/angular-banking-app/home/accountDetails": {},
+    "/angular-banking-app/home/customerAccountForm": {},
+    "/angular-banking-app/login": {}
+  }
+}
